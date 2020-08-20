@@ -1,12 +1,22 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import DropdownComp from "./Dropdown";
 import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
+import { useSelector, useDispatch } from "react-redux";
+import { ISSUES } from "../../Redux/Constants";
 
 const Issues = () => {
   const [show, setShow] = useState(false);
   const target = useRef(null);
+  const issuesApiData = useSelector((state) => state.issues);
+  const issuesApiDispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("use effect loaded");
+    !issuesApiData.issues.length && issuesApiDispatch({ type: ISSUES.LOAD });
+  }, []);
+
   return (
     <div className="issues">
       {/* <div className="issues-count">

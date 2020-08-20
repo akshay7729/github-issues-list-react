@@ -17,7 +17,7 @@ const IssuesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        search: action.payload,
+        issues: action.payload,
       };
     case ISSUES.ERROR:
       return {

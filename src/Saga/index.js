@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from "redux-saga";
+import { takeEvery, call, put } from "redux-saga/effects";
 import { ISSUES } from "../Redux/Constants";
 import { issuesApi } from "../Api";
 
