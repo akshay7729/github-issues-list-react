@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "./Styles/App.scss";
-import Navbar from "./Components/Header/navbar";
-import Megamenu from "./Components/Header/megamenu";
-import Menu from "./Components/Menu";
+import Menu from "./Components/Header/Menu";
+import Navbar from "./Components/Header/Navbar";
+import Main from "./Components/Main";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Megamenu />
       <Menu />
+      <Main />
     </div>
   );
 }
