@@ -43,6 +43,13 @@
             margin-top: -1px;
             margin-right: 3px;
           }
+          &:focus,
+          &:active {
+            border: none !important;
+            color: map-get($colors, black) !important;
+            background-color: map-get($colors, grey) !important;
+            box-shadow: none !important;
+          }
         }
       }
     }
@@ -81,8 +88,12 @@
         background: none;
         border: none;
         color: map-get($colors, black);
-        &:focus {
-          background: none;
+        &:focus,
+        &:active {
+          border: none !important;
+          color: map-get($colors, black) !important;
+          background-color: map-get($colors, grey) !important;
+          box-shadow: none !important;
         }
       }
     }
@@ -98,6 +109,9 @@
           border: none;
           padding: 0;
           padding-right: 10px;
+          svg {
+            fill: map-get($colors, green);
+          }
         }
       }
       .issue-desc {
@@ -109,12 +123,7 @@
         }
         .issue-pill {
           @include border-radius(25px);
-        }
-        .bug-issue-pill {
-          background: map-get($colors, orange);
-        }
-        .triage-issue-pill {
-          background: map-get($colors, red);
+          color: map-get($colors, white);
         }
       }
     }

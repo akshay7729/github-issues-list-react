@@ -1,7 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import { useSelector, useDispatch } from "react-redux";
+import { INCREMENT } from "../../Redux/Constants";
 
 const Menu = () => {
+  const incrementData = useSelector((state) => state.increment);
+  const incrementDispatch = useDispatch();
   return (
     <div className="menu px-5 pt-3 d-flex justify-content-md-between">
       <div>
@@ -30,7 +34,15 @@ const Menu = () => {
       <div className="menu-actions">
         <ul>
           <li className="ml-2 pr-2">
-            <Button className="mr-2">
+            <Button
+              className="mr-2"
+              onClick={() =>
+                incrementDispatch({
+                  type: INCREMENT.WATCH,
+                  payload: incrementData.watch,
+                })
+              }
+            >
               <svg
                 height="16"
                 viewBox="0 0 16 16"
@@ -45,10 +57,18 @@ const Menu = () => {
               </svg>{" "}
               watch
             </Button>
-            <span>0</span>
+            <span>{incrementData.watch}</span>
           </li>
           <li className="ml-2 pr-2">
-            <Button className="mr-2">
+            <Button
+              className="mr-2"
+              onClick={() =>
+                incrementDispatch({
+                  type: INCREMENT.STAR,
+                  payload: incrementData.star,
+                })
+              }
+            >
               <svg
                 height="16"
                 viewBox="0 0 16 16"
@@ -63,10 +83,18 @@ const Menu = () => {
               </svg>
               star
             </Button>
-            <span>0</span>
+            <span>{incrementData.star}</span>
           </li>
           <li className="ml-2 pr-2">
-            <Button className="mr-2">
+            <Button
+              className="mr-2"
+              onClick={() =>
+                incrementDispatch({
+                  type: INCREMENT.FORK,
+                  payload: incrementData.fork,
+                })
+              }
+            >
               <svg
                 viewBox="0 0 16 16"
                 version="1.1"
@@ -81,7 +109,7 @@ const Menu = () => {
               </svg>{" "}
               fork
             </Button>
-            <span>0</span>
+            <span>{incrementData.fork}</span>
           </li>
         </ul>
       </div>

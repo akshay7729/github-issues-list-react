@@ -3,3 +3,9 @@ export const ISSUES = {
   RESPONSE: "ISSUES_RESPONSE",
   ERROR: "ISSUES_RESPONSE",
 };
+
+export const INCREMENT = {
+  WATCH: "WATCH_COUNT",
+  STAR: "STAR_COUNT",
+  FORK: "FORK_COUNT",
+};
