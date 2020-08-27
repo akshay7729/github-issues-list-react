@@ -27,6 +27,20 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `Dependencies`
+
+"axios": "^0.19.2",
+"bootstrap": "^4.5.2",
+"node-sass": "^4.14.1",
+"react": "^16.13.1",
+"react-bootstrap": "^1.3.0",
+"react-dom": "^16.13.1",
+"react-moment": "^0.9.7",
+"react-redux": "^7.2.1",
+"react-scripts": "3.4.3",
+"redux": "^4.0.5",
+"redux-saga": "^1.1.3"
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
