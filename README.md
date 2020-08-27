@@ -29,17 +29,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `Dependencies`
 
-"axios": "^0.19.2",
-"bootstrap": "^4.5.2",
-"node-sass": "^4.14.1",
-"react": "^16.13.1",
-"react-bootstrap": "^1.3.0",
-"react-dom": "^16.13.1",
-"react-moment": "^0.9.7",
-"react-redux": "^7.2.1",
-"react-scripts": "3.4.3",
-"redux": "^4.0.5",
-"redux-saga": "^1.1.3"
+"axios": "^0.19.2",<br />
+"bootstrap": "^4.5.2",<br />
+"node-sass": "^4.14.1",<br />
+"react": "^16.13.1",<br />
+"react-bootstrap": "^1.3.0",<br />
+"react-dom": "^16.13.1",<br />
+"react-moment": "^0.9.7",<br />
+"react-redux": "^7.2.1",<br />
+"react-scripts": "3.4.3",<br />
+"redux": "^4.0.5",<br />
+"redux-saga": "^1.1.3"<br />
 
 ### `npm run eject`
 
