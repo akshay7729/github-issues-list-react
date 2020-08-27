@@ -14,11 +14,10 @@ const Issues = () => {
   const issuesApiDispatch = useDispatch();
 
   useEffect(() => {
-    console.log("use effect loaded");
     !issuesApiData.issues.length && issuesApiDispatch({ type: ISSUES.LOAD });
   }, []);
 
-  if (issuesApiData.issues.length) {
+  if (issuesApiData && issuesApiData.issues) {
     const openIssues = issuesApiData.issues.filter((issue) => {
       return issue.state === "open" && issue;
     });
@@ -117,7 +116,11 @@ const Issues = () => {
         <DropdownComp name="Assignee" />
         <DropdownComp name="Sort" />
       </div>
-      <div className="issues-list">{openIssuesList}</div>
+      <div className={`issues-list ${!openIssuesList && `p-4`}`}>
+        {openIssuesList
+          ? openIssuesList
+          : `Error : Please provide correct Repository and Project name`}
+      </div>
     </div>
   );
 };

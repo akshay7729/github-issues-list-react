@@ -1,7 +1,7 @@
 export const ISSUES = {
   LOAD: "ISSUES_LOAD",
   RESPONSE: "ISSUES_RESPONSE",
-  ERROR: "ISSUES_RESPONSE",
+  ERROR: "ISSUES_ERROR",
 };
 
 export const INCREMENT = {

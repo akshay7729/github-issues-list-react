@@ -23,7 +23,6 @@ const IssuesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        issues: [],
         error: action.payload,
       };
     default:

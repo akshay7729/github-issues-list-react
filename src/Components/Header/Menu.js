@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { INCREMENT } from "../../Redux/Constants";
 
 const Menu = () => {
   const incrementData = useSelector((state) => state.increment);
+  const issuesData = useSelector((state) => state.issues);
   const incrementDispatch = useDispatch();
+
+  if (issuesData && issuesData.issues && issuesData.issues[0] !== undefined) {
+    const getRepoUrl = issuesData.issues[0].url.split(
+      "https://api.github.com/repos/"
+    );
+    var getRepoUrlNames = getRepoUrl[1].split("/");
+  }
+
   return (
     <div className="menu px-5 pt-3 d-flex justify-content-md-between">
       <div>
@@ -22,12 +31,12 @@ const Menu = () => {
           ></path>
         </svg>
         <span className="pl-1">
-          <a href="/">facebook</a>
+          <a href="/">{getRepoUrlNames && getRepoUrlNames[0]}</a>
         </span>
         <span className="pl-1">/</span>
         <span className="pl-1">
           <strong>
-            <a href="/">create-react-app</a>
+            <a href="/">{getRepoUrlNames && getRepoUrlNames[1]}</a>
           </strong>
         </span>
       </div>

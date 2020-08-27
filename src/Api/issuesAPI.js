@@ -2,7 +2,6 @@ import Axios from "axios";
 
 export const issuesApi = async () => {
   const path = window.location.pathname;
-  console.log("path", path.split("/"));
   const url =
     path.split("/").length > 2
       ? `https://api.github.com/repos/${path.split("/")[1]}/${
@@ -14,8 +13,10 @@ export const issuesApi = async () => {
       .then((response) => {
         return response.data;
       })
-      .catch((error) => console.log("api error message", error.message));
+      .catch((error) => {
+        return error.message;
+      });
   } catch (e) {
-    console.log("api load error", e);
+    return e;
   }
 };

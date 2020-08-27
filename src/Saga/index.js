@@ -5,12 +5,18 @@ import { issuesApi } from "../Api";
 function* handleIssuesApi() {
   try {
     const data = yield call(issuesApi);
-    yield put({
-      type: ISSUES.RESPONSE,
-      payload: data,
-    });
+    if (data === "Request failed with status code 404") {
+      yield put({
+        type: ISSUES.ERROR,
+        payload: data,
+      });
+    } else {
+      yield put({
+        type: ISSUES.RESPONSE,
+        payload: data,
+      });
+    }
   } catch (e) {
-    console.log("handle api issue", e);
     yield put({
       type: ISSUES.ERROR,
       payload: e.message,
